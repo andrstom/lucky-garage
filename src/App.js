@@ -1,6 +1,7 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import LocaleContext from "./context/LocaleContext"
+import LocaleContext from "./context/LocaleContext";
 
 export default function App() {
   const [locale, setLocale] = React.useState('cs')
@@ -17,18 +18,15 @@ export default function App() {
   }), [locale])
 
   return (
-    <LocaleContext.Provider value={value}>
-      <section className="App">
-        <div className="header">
+    <>
+      <LocaleContext.Provider value={value}>
+        <Router>
           <Navbar />
-        </div>
-        <div className="content">
-          <h1>contenjkkkt</h1>
-        </div>
-        <div className="footer">
-          <h1>footer</h1>
-        </div>
-      </section>
-    </LocaleContext.Provider>
+          <Switch>
+            <Route path="/" exact />
+          </Switch>
+        </Router>
+      </LocaleContext.Provider>
+    </>
   );
 }
