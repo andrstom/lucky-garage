@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 import { menuItems } from './MenuItems';
+import { Button } from "../Buttons/Button"
 import LocaleContext from "../../context/LocaleContext"
 
 export default function Navbar() {
@@ -32,10 +33,12 @@ export default function Navbar() {
                     );
                 })}
                 <li className="navbar-locale">
-                    {locale === 'cs'
-                        ? <button onClick={toggleLocale}>ENG</button>
-                        : <button onClick={toggleLocale}>CS</button>
-                    }
+                    <Button link="#" className="btn" buttonStyle="btn--outline" buttonSize="btn--small" onClick={toggleLocale}>
+                        {locale === 'cs'
+                            ? "EN"
+                            : "CS"
+                        }
+                    </Button>
                 </li>
                 
             </ul>
