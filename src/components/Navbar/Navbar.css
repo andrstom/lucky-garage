@@ -1,5 +1,5 @@
 .navbar {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   position: relative;
   max-width: 1200px;
   margin: 20px auto;
@@ -7,7 +7,7 @@
   background: #fff;
   box-sizing: border-box;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-logo {
@@ -32,10 +32,12 @@ nav .nav-menu {
   margin: 0;
   padding: 0;
   display: flex;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
 }
 
 nav .nav-menu .menu-item {
- list-style: none;
+  list-style: none;
 }
 
 nav .nav-menu .menu-item .nav-links {
@@ -51,7 +53,7 @@ nav .nav-menu .menu-item .nav-links.active {
   color: var(--primary);
   background-color: var(--secondary);
   border-radius: 5px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 nav .nav-menu .menu-item .nav-links-flag {
@@ -75,7 +77,6 @@ nav .nav-menu .menu-item .nav-links-flag {
 }
 
 @media (max-width: 768px) {
-
   .menu-toggle {
     display: block;
     width: 40px;
@@ -89,16 +90,17 @@ nav .nav-menu .menu-item .nav-links-flag {
 
   nav {
     width: 100%;
+    margin-top: 10px;
   }
 
   nav .nav-menu {
-      display: none;
-  }  
+    display: none;
+  }
 
   nav .nav-menu.active {
     display: flex;
     flex-direction: column;
-    transition: all 0.2s ease;
+    transition: all 1s ease;
   }
 
   nav .nav-menu.active .menu-item {
@@ -107,8 +109,11 @@ nav .nav-menu .menu-item .nav-links-flag {
 
   nav .nav-menu.active .menu-item:hover {
     background-color: var(--secondary);
-    transition: all 0.2s ease;
+    transition: all 1s ease;
     border-radius: 5px;
   }
 
+  nav .nav-menu.active .menu-item .nav-links-flag:hover {
+    background-color: var(--primary);
+  }
 }
