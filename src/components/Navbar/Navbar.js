@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css'
 import { menuItems } from './MenuItems';
-import { Button } from "../Buttons/Button"
+import flag_cz from './flag_cz.png';
+import flag_en from './flag_en.png';
+import logo from './lg_logo_256.png';
 import LocaleContext from "../../context/LocaleContext"
 
 export default function Navbar() {
@@ -11,38 +13,36 @@ export default function Navbar() {
 
     const handleToggleMenu = () => setToogleMenu(!toggleMenu);
     const handleCloseMobileMenu = () => setToogleMenu(false);
-
     
     return (
         <>
-        <nav className="navbar">
-            <div className="navbar-container">
-                <Link to="/" className="navbar-logo">
-                    <i className="fas fa-car"></i> Logo 
-                </Link>
-                <div className="menu-icon" onClick={handleToggleMenu}>
-                    <i className={toggleMenu ? "fas fa-times" : "fas fa-bars"}></i>
-                </div>
+        <div className="navbar">
+            <Link to="/" className="navbar-logo">
+                <img src={logo} width="70" alt="logo" />
+            </Link>
+            <div className="menu-toggle" onClick={handleToggleMenu}>
+                <i className={`fas fa-${toggleMenu ? "times" : "bars"} fa-2x`}></i>
             </div>
 
-            <ul className={toggleMenu ? "nav-menu active" : "nav-menu"}>
-                
-                {menuItems[locale].map((item, index) => {
-                    return (
-                        <li key={index} className={item.cName}><Link to={item.url} onClick={handleCloseMobileMenu}>{item.title}</Link></li>
-                    );
-                })}
-                <li className="navbar-locale">
-                    <Button link="#" className="btn" buttonStyle="btn--outline" buttonSize="btn--small" onClick={toggleLocale}>
-                        {locale === 'cs'
-                            ? "EN"
-                            : "CS"
-                        }
-                    </Button>
-                </li>
-                
-            </ul>
-        </nav>
+            <nav>
+                <ul className={`nav-menu ${toggleMenu ? "active" : ""}`}>
+                    {menuItems[locale].map((item, index) => {
+                        return (
+                            <li key={index} className="menu-item"><Link to={item.url} activeClassName="active" className={item.cName} onClick={handleCloseMobileMenu}>{item.title}</Link></li>
+                        );
+                    })}
+                    <li className="menu-item">
+                        <Link to="#" className="nav-links-flag" onClick={toggleLocale}>
+                            {locale === 'cs'
+                                ? <img src={flag_en} width="30" alt="en" />
+                                : <img src={flag_cz} width="30" alt="cze" />
+                            }
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+            <div className="clearfix"></div>
+        </div>
         </>
     );
 }

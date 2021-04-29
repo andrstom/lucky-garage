@@ -14,11 +14,6 @@ export const menuItems = {
             title: "Kontakt",
             url: "#",
             cName: "nav-links"
-        },
-        {
-            title: "+420 123 456",
-            url: "#",
-            cName: "nav-links-mobile"
         }
     ],
     en: [
@@ -36,11 +31,6 @@ export const menuItems = {
             title: "Contact",
             url: "#",
             cName: "nav-links"
-        },
-        {
-            title: "+420 123 456",
-            url: "#",
-            cName: "nav-links-mobile"
         }
     ]
 }
