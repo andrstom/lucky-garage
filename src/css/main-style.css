@@ -14,12 +14,8 @@ body {
   font-family: 'Monserrat', 'Open Sans', sans-serif;
 }
 
-section {
-  width: 100%;
-}
-
 .container {
-  width: 50%;
+  width: 80%;
 }
 
 .row {

@@ -1,35 +1,35 @@
 export const menuItems = {
     cs: [
         {
-            title: "O nás",
-            url: "#",
+            title: "Domů",
+            url: "/",
             cName: "nav-links"
         },
         {
-            title: "Naše služby",
-            url: "#",
+            title: "Autoservis",
+            url: "/carservice",
             cName: "nav-links"
         },
         {
-            title: "Kontakt",
-            url: "#",
+            title: "Pneuservis",
+            url: "/pneuservice",
             cName: "nav-links"
         }
     ],
     en: [
         {
-            title: "About",
-            url: "#",
+            title: "Home",
+            url: "/",
             cName: "nav-links"
         },
         {
-            title: "Services",
-            url: "#",
+            title: "Car service",
+            url: "/carservice",
             cName: "nav-links"
         },
         {
-            title: "Contact",
-            url: "#",
+            title: "Pneu service",
+            url: "/pneuservice",
             cName: "nav-links"
         }
     ]

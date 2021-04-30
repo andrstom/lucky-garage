@@ -7,6 +7,13 @@ import flag_en from "./flag_en.png";
 import logo from "./lg_logo_256.png";
 import LocaleContext from "../../context/LocaleContext";
 
+const activeStyle = {
+    color: "#fff",
+    backgroundColor: "#242424",
+    transition: "all 1s ease",
+    borderRadius: "5px",
+}
+
 export default function Navbar() {
   const { locale, toggleLocale } = React.useContext(LocaleContext);
   const [toggleMenu, setToogleMenu] = React.useState(false);
@@ -29,13 +36,14 @@ export default function Navbar() {
             {menuItems[locale].map((item, index) => {
               return (
                 <li key={index} className="menu-item">
-                  <Link
-                    to={item.url}
+                  <NavLink
+                    to={item.url} exact
                     className={item.cName}
                     onClick={handleCloseMobileMenu}
+                    activeStyle={activeStyle}
                   >
                     {item.title}
-                  </Link>
+                  </NavLink>
                 </li>
               );
             })}

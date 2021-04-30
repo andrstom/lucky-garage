@@ -48,7 +48,7 @@ nav .nav-menu .menu-item .nav-links {
   font-size: 1.5rem;
 }
 
-nav .nav-menu .menu-item .nav-links:hover,
+nav .nav-menu .menu-item .nav-links:hover
 nav .nav-menu .menu-item .nav-links.active {
   color: var(--primary);
   background-color: var(--secondary);
@@ -111,6 +111,10 @@ nav .nav-menu .menu-item .nav-links-flag {
     background-color: var(--secondary);
     transition: all 1s ease;
     border-radius: 5px;
+  }
+
+  nav .nav-menu.active .menu-item .nav-links:hover {
+    color: var(--primary);
   }
 
   nav .nav-menu.active .menu-item .nav-links-flag:hover {
